@@ -38,8 +38,7 @@ cursor: pointer;
 
 .display{
     margin: 0;
-    font-size: 30px;
-    /* font-family: 'Press Start 2P', cursive; */
+    font-size:35px;
     cursor: pointer;
     color:rgba(255, 0, 0, 0.856);
 }
@@ -48,7 +47,7 @@ button{
 }
 .display:hover{
     color:rgba(95, 16, 16, 0.856);
-    font-size: 30.5px;
+    font-size: 35.5px;
     cursor: pointer;
 }
 .boxButton{
