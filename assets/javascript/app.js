@@ -1,10 +1,10 @@
 
 //create array of objects 
 var questions = [
-    { question: "is it hard?", answer: 'Yes', wrong: "No", },
-    { question: "is snow red?", answer: 'No', wrong: "Yes", },
+    { question: "Is it hard?", answer: 'Yes', wrong: "No", },
+    { question: "Is snow red?", answer: 'No', wrong: "Yes", },
     {
-        question: "how many weeks in a month?", answer: '4',
+        question: "How many weeks in a month?", answer: '4',
         wrong: "5", wrong2: "14",
     }
 
@@ -27,7 +27,7 @@ $(document).ready(function () {
         //Submit button pops up on screen
         $(".boxButton").append(submitButton)
         ///TIMER FUNCTION.../////////////////////
-        $('.display').html("Seconds left: " + timeleft)
+        $('.display').html("Seconds left: " +  timeleft)
         intervalId = setInterval(count, 1000);
         function count() {
             /// we going to check our var timeleft, -1 every second, show its value on screen every second until its 0! 
@@ -50,20 +50,20 @@ $(document).ready(function () {
                     noAnswer++;
                 }
                 // we empty screen and showing results, if all right we say U GOT THEM ALL
-                // i should have put this in the function and reuse it again in else, but I am doing smthing wrong everytime im using functions
+                // i should have put this in the function and reuse it again in else, but I am doing smthing wrong...
                 $('.boxButton').empty()
                 if ((userChoice == questions[0].answer) && (userChoice2 == questions[1].answer) && (userChoice3 == questions[2].answer)) {
                     var finalScreen = $('<div>')
-                    var winner = $("<h1>").text("!!!!!!YOU GOT THEM ALL!!!!!!")
+                    var winner = $("<h1>").text("!!!YOU GOT THEM ALL!!!")
                     finalScreen.append(winner)
                     var stats = $("<div>").html("You have " + rightAnswers + " right answers! " +
-                        " You have " + wrongAnswrse + " answers! " + " You left " + noAnswer + " with no answer! ")
+                        " You have " + wrongAnswers + " answers! " + " You left " + noAnswer + " with no answer! ")
                     finalScreen.append(stats)
                     $("#finalscreen").append(finalScreen)
                 }
                 else {
                     var finalScreen = $('<div>')
-                    var loser = $("<h1>").text("!!!TRY AGAIN!!!!")
+                    var loser = $("<h1>").text("!!!TRY AGAIN!!!")
                     finalScreen.append(loser)
                     var stats = $("<div>").html("You have " + rightAnswers + " right answers! " +
                         " You have " + wrongAnswers + " wrong answers! " + " You left " + noAnswer + " with no answer! ")
@@ -76,11 +76,11 @@ $(document).ready(function () {
 
         $(this).hide()
         //QUestion one!
-        var questionDiv = $('<div>')
+        var questionDiv = $('<div>').attr("class","questionStyle")
         $(".boxButton").append(questionDiv)
         $(questionDiv).html(questions[0].question + '<br>' +
-            '<input id="first" type="radio" name="question1" value="Yes"> Yes' +
-            '<input id="first" type="radio" name="question1" value="No"> No')
+            '<input id="first" type="radio" name="question1" value="Yes"> <span id="answerStyle">Yes</span>    |' +
+            ' <span id="answerStyle">No</span>  <input id="first" type="radio" name="question1" value="No">  ')
         $("input[id='first']").on("click", function () {
             //  get value from radio button.
             userChoice = $(this).attr("value")
@@ -88,23 +88,23 @@ $(document).ready(function () {
 
         })
         //QUestion two!
-        var questionDiv1 = $('<div>')
+        var questionDiv1 = $('<div>').attr("class","questionStyle")
         $(".boxButton").append(questionDiv1)
         $(questionDiv1).html(questions[1].question + '<br>' +
-            '<input id="second" type="radio" name="question2" value="Yes"> Yes' +
-            '<input id="second" type="radio" name="question2" value="No"> No')
+            '<input id="second" type="radio" name="question2" value="Yes"> <span id="answerStyle">Yes</span>     |' +
+            ' <span id="answerStyle">No</span>  <input id="second" type="radio" name="question2" value="No"> ')
         $("input[id='second']").on("click", function () {
             // get value from radio button.
             userChoice2 = $(this).attr("value")
             console.log(userChoice2)
         })
         //Question three!
-        var questionDiv2 = $('<div>')
+        var questionDiv2 = $('<div>').attr("class","questionStyle")
         $(".boxButton").append(questionDiv2)
         $(questionDiv2).html(questions[2].question + '<br>' +
-            '<input id="third" type="radio" name="question3" value="4"> 4' +
-            '<input id="third" type="radio" name="question3" value="5"> 5' +
-            '<input id="third" type="radio" name="question3" value="14"> 15')
+            '<input id="third" type="radio" name="question3" value="4"> <span id="answerStyle">4</span> ' +
+            '<input id="third" type="radio" name="question3" value="5"> <span id="answerStyle">5</span> ' +
+            '<input id="third" type="radio" name="question3" value="14"><span id="answerStyle">15</span>')
         $("input[id='third']").on("click", function () {
             // get value from radio button.
             userChoice3 = $(this).attr("value")
@@ -137,7 +137,7 @@ $(document).ready(function () {
             var finalScreen = $('<div>')
             var winner = $("<h1>").text("!!!!!!YOU GOT THEM ALL!!!!!!")
             finalScreen.append(winner)
-            var stats = $("<div>").html("You have " + rightAnswers + " right answers! " +
+            var stats = $("<div>").html("You have " +  rightAnswers + " right answers! " +
                 " You have " + wrongAnswers + " answers! " + " You left " + noAnswer + " with no answer! ")
             finalScreen.append(stats)
             $("#finalscreen").append(finalScreen)

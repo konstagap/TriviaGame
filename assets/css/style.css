@@ -1,0 +1,65 @@
+body{
+    background-color: rgb(239, 237, 251);
+    font-family: 'Amatic SC', cursive;
+    letter-spacing:2px;
+}
+h1{
+    font-size: 2em;
+    font-family: 'Monoton', cursive;
+    color: rgba(255, 9, 9, 0.63);
+    transition: border-bottom 7s linear ;
+
+}
+h1:hover{
+    color:rgba(170, 14, 14, 0.849);
+    font-size: 1.99em;
+    border-bottom: .6px solid rgba(255, 9, 9, 0.63);
+}
+.questionStyle{
+    margin:5px;
+}
+input{
+margin: 5px;
+cursor: pointer;
+}
+#answerStyle{
+  
+    color:rgba(255, 0, 0, 0.856);
+}
+#answerStyle:hover{
+    color:rgba(170, 14, 14, 0.849);
+    cursor: pointer;
+    font-size: 26px;
+}
+#finalscreen{
+    font-size: 1.7em;
+  
+}
+
+.display{
+    margin: 0;
+    font-size: 30px;
+    /* font-family: 'Press Start 2P', cursive; */
+    cursor: pointer;
+    color:rgba(255, 0, 0, 0.856);
+}
+button{
+    font-size: .8em;
+}
+.display:hover{
+    color:rgba(95, 16, 16, 0.856);
+    font-size: 30.5px;
+    cursor: pointer;
+}
+.boxButton{
+    background-color: rgb(230, 226, 251);
+    border: .5px solid rgba(195, 187, 251, 0.746);
+    border-radius: 10px;
+}
+#start:hover{
+    cursor: pointer;
+    color:rgba(209, 21, 21, 0.849);
+    font-size: 26px;
+    background-color: rgba(241, 239, 253, 0.664);
+    border-radius: 10px;
+}
