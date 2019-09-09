@@ -56,7 +56,7 @@ $(document).ready(function () {
                     finalScreen.append(winner)
                     //adding our stats to "finalScreen" div
                     var stats = $("<div>").html("You have " + rightAnswers + " right answers! " +
-                        " You have " + wrongAnswers + " answers! " + " You left " + noAnswer + " with no answer! ")
+                        " You have " + wrongAnswers + " wrong answers! " + " You left " + noAnswer + " with no answer! ")
                     finalScreen.append(stats)
                     //putting our var finalScreen on computer screen.
                     $("#finalscreen").append(finalScreen)
@@ -144,7 +144,7 @@ $(document).ready(function () {
             var winner = $("<h1>").text("!!!!!!YOU GOT THEM ALL!!!!!!")
             finalScreen.append(winner)
             var stats = $("<div>").html("You have " + rightAnswers + " right answers! " +
-                " You have " + wrongAnswers + " answers! " + " You left " + noAnswer + " with no answer! ")
+                " You have " + wrongAnswers + " wrong answers! " + " You left " + noAnswer + " with no answer! ")
             finalScreen.append(stats)
             $("#finalscreen").append(finalScreen)
         }
