@@ -1,4 +1,4 @@
-# TriviaGame
+# Trivia Game
 https://konstagap.github.io/TriviaGame/
 
 ### Overview
